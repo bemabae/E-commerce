@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 function Homepage() {
     return (
         <>
-            <div className="h-[100vh] p">
+            <div className="m-h-[100vh]">
                 <NavBar />
                 <motion.hr
                     className="border-slate-300"
