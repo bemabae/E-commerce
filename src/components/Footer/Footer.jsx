@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className="p-6 text-center bg-[#011313] text-white">
+        <footer className="p-6 text-center bg-[#011313] text-white mt-auto">
             <p>copyright 2024 ; bemabae</p>
-        </div>
+        </footer>
     );
 }
 
