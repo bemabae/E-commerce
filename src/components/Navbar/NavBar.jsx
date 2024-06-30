@@ -19,13 +19,14 @@ function NavBar() {
     //     });
     // }, []);
 
+    // ALL category
     return (
         <>
-            <nav className="h-[80px]">
+            <nav className="h-[80px] bg-white sticky top-0 z-50">
                 <div className="flex justify-between items-center px-[100px] h-[100%] py-0">
-                    <motion.div className="cursor-pointer">
+                    <div className="cursor-pointer">
                         <span className="text-2xl">LOGO</span>
-                    </motion.div>
+                    </div>
 
                     {/* Toggle Menu Button Burger */}
                     <div className="md:hidden">
@@ -206,12 +207,6 @@ function NavBar() {
                     </div>
                 </div>
                 {/* Navbar Website version end */}
-                <motion.hr
-                    className="border-slate-300"
-                    initial={{ width: 0, opacity: 0.2 }}
-                    animate={{ width: "100%", opacity: 1 }}
-                    transition={{ duration: 1.5 }}
-                />
             </nav>
         </>
     );
