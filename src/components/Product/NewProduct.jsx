@@ -7,6 +7,7 @@ import ReactLoading from "react-loading";
 function NewProduct() {
     const [newProduct, setNewProduct] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState({});
 
     useEffect(() => {
         getNewProduct(category);
@@ -23,9 +24,11 @@ function NewProduct() {
                 results.push(response.data);
             }
             setLoading(false);
+            setError(null);
             setNewProduct(results);
         } catch (e) {
-            console.log("err", e);
+            setError(e);
+            setLoading(false);
         }
     };
 
@@ -42,6 +45,7 @@ function NewProduct() {
                     />
                 </div>
             )}
+            {error && <div className="text-center mt-11">{error.message}</div>}
 
             {!loading && (
                 <div className="flex gap-10 flex-wrap justify-center mt-10">
