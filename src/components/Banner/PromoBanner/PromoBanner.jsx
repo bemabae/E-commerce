@@ -14,7 +14,7 @@ function PromoBanner() {
             transition={{ duration: 1, delay: 0.8 }}
         >
             <Banner>
-                <div className="flex w-full justify-between bg-gray-50 p-4">
+                <div className="flex w-full justify-between bg-gray-100 p-4">
                     <div className="mx-auto flex items-center">
                         <p className="flex items-center text-sm font-normal text-gray-500 ">
                             <span className="mr-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 p-1 ">
