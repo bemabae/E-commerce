@@ -37,8 +37,8 @@ function NavBar() {
                         />
                     </div>
 
+                    {/* Navbar Moblie version start */}
                     <AnimatePresence>
-                        {/* Navbar Moblie version start */}
                         {isOpen && (
                             <motion.div
                                 className="fixed  shadow-4xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-50 border-b border-b-white/20 z-50 mt-3"
@@ -132,7 +132,7 @@ function NavBar() {
                             <li className="pl-[35px]">
                                 <Link
                                     to="/"
-                                    className="text-black text-xl"
+                                    className="text-black text-xl "
                                 >
                                     Home
                                 </Link>
@@ -205,8 +205,8 @@ function NavBar() {
                             </li>
                         </ul>
                     </div>
+                    {/* Navbar Website version end */}
                 </div>
-                {/* Navbar Website version end */}
             </nav>
         </>
     );
