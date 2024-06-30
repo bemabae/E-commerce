@@ -10,5 +10,7 @@ export default {
     theme: {
         extend: {}
     },
-    plugins: [require("flowbite/plugin"), flowbite.content()]
+    plugins: [require("flowbite/plugin"), flowbite.content()],
+    darkMode: "media",
+    darkMode: "false"
 };
