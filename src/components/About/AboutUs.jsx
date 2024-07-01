@@ -23,7 +23,7 @@ function AboutUs() {
                 >
                     About Us
                 </motion.span>
-                <div className="relative flex flex-col xl:left-[150px] xl:top-[50px] xl:w-[700px] text-center mt-10 px-20 xl:px-0 lg:block">
+                <div className="xl:relative xl:left-[150px] xl:top-[50px] xl:w-[700px] text-center mt-10 px-20 xl:px-0 lg:block">
                     <motion.p
                         initial={{ y: -130, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
