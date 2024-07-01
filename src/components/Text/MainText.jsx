@@ -10,11 +10,14 @@ function MainText() {
                 </header>
                 <section className="mt-7 p-10">
                     <article>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid, reprehenderit, itaque
-                            voluptate optio, explicabo asperiores perspiciatis totam error porro quo molestias vero ad
-                            qui sapiente deleniti nihil possimus voluptatibus id illo eaque odit? Consectetur soluta
-                            nulla iure cum culpa! Assumenda neque quas qui aliquam et nemo dolor laborum consequuntur.
+                        <p className="text-center">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium perspiciatis vero a
+                            veritatis suscipit sequi maiores atque non debitis facere, obcaecati quod nam asperiores hic
+                            eius ad accusamus, corrupti in dignissimos voluptates alias. Cupiditate molestias sapiente
+                            aspernatur laboriosam dolorem voluptate ipsa? Dolore atque blanditiis impedit ab dicta
+                            dolorum corporis, eos fugit doloribus? Corporis veniam officiis sunt provident odio natus
+                            dignissimos dolor atque corrupti neque. Blanditiis numquam totam eos placeat mollitia. Sint
+                            quisquam quis consequatur mollitia?
                         </p>
                     </article>
                 </section>
