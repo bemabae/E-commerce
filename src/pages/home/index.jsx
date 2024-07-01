@@ -3,7 +3,7 @@ import NavBar from "../../components/Navbar/NavBar";
 import PromoBanner from "../../components/Banner/PromoBanner/PromoBanner";
 import MainBanner from "../../components/Banner/MainBanner/MainBanner";
 import MainText from "../../components/Text/MainText";
-import NewProduct from "../../components/Product/NewProduct";
+import NewProduct from "../../components/Product/NewProduct/NewProduct";
 import ExclusiveBanner from "../../components/Banner/ExclusiveBanner/ExclusiveBanner";
 import Footer from "../../components/Footer/Footer";
 import { motion } from "framer-motion";
@@ -20,7 +20,7 @@ function Homepage() {
                     transition={{ duration: 2 }}
                 />
                 <PromoBanner />
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col lg:flex-row">
                     <MainBanner />
                     <MainText />
                 </div>
