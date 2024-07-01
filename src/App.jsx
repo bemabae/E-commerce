@@ -2,6 +2,10 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/home";
 import About from "./pages/about";
+import Product from "./pages/products";
+import CategoryProduct from "./components/Product/CategoryProduct/CategoryProduct";
+import Detail from "./pages/detail";
+import Cart from "./pages/cart";
 
 function App() {
     const router = createBrowserRouter([
@@ -12,6 +16,22 @@ function App() {
         {
             path: "/about",
             element: <About />
+        },
+        {
+            path: "/product",
+            element: <Product />
+        },
+        {
+            path: "/product/:category",
+            element: <CategoryProduct />
+        },
+        {
+            path: "/product/:id/detail",
+            element: <Detail />
+        },
+        {
+            path: "/cart",
+            element: <Cart />
         }
     ]);
     return <RouterProvider router={router} />;
