@@ -5,6 +5,7 @@ import { Dropdown } from "flowbite-react";
 import { Squash as Hamburger } from "hamburger-react";
 import { FaPerson, FaPersonDress, FaComputer } from "react-icons/fa6";
 import { IoDiamond } from "react-icons/io5";
+import { CiShoppingCart } from "react-icons/ci";
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +21,15 @@ function NavBar() {
     // }, []);
 
     // ALL category
+
     return (
         <>
             <nav className="h-[80px] bg-white sticky top-0 z-50">
                 <div className="flex justify-between items-center px-[100px] h-[100%] py-0">
                     <div className="cursor-pointer">
-                        <span className="text-2xl">LOGO</span>
+                        <Link to="/">
+                            <span className="text-2xl">LOGO</span>
+                        </Link>
                     </div>
 
                     {/* Toggle Menu Button Burger */}
@@ -41,7 +45,7 @@ function NavBar() {
                     <AnimatePresence>
                         {isOpen && (
                             <motion.div
-                                className="fixed  shadow-4xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-50 border-b border-b-white/20 z-50 mt-3"
+                                className="fixed shadow-xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-50 border-b border-b-white/20 z-50 mt-3"
                                 initial={{ height: 0 }}
                                 animate={{ height: 150 }}
                                 transition={{ duration: 0.2 }}
@@ -83,28 +87,35 @@ function NavBar() {
                                                 </Dropdown.Header>
                                                 <Dropdown.Item
                                                     as={Link}
-                                                    to={"/"}
+                                                    to={"/product"}
+                                                    className="hover:bg-transparent focus:bg-transparent"
+                                                >
+                                                    <span className="text-md hover:underline">All products</span>
+                                                </Dropdown.Item>
+                                                <Dropdown.Item
+                                                    as={Link}
+                                                    to={"/product/men's clothing"}
                                                     className="hover:bg-transparent focus:bg-transparent"
                                                 >
                                                     <span className="text-md hover:underline">Men</span>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item
                                                     as={Link}
-                                                    to={"/"}
+                                                    to={"/product/women's clothing"}
                                                     className="hover:bg-transparent focus:bg-transparent"
                                                 >
                                                     <span className="text-md hover:underline">Women</span>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item
                                                     as={Link}
-                                                    to={"/about"}
+                                                    to={"/product/jewelery"}
                                                     className="hover:bg-transparent focus:bg-transparent"
                                                 >
                                                     <span className="text-md hover:underline">Jewery</span>
                                                 </Dropdown.Item>
                                                 <Dropdown.Item
                                                     as={Link}
-                                                    to={"/about"}
+                                                    to={"/product/electronics"}
                                                     className="hover:bg-transparent focus:bg-transparent"
                                                 >
                                                     <span className="text-md hover:underline">Electronics</span>
@@ -114,10 +125,14 @@ function NavBar() {
                                     </li>
                                     <li className="pt-2">
                                         <Link
-                                            to="/contact"
-                                            className="text-black text-xl hover:underline"
+                                            to="/cart"
+                                            className="text-black text-xl hover:underline flex items-center relative"
                                         >
                                             Cart
+                                            <CiShoppingCart className="-z-40" />
+                                            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full right-5">
+                                                <span>2</span>
+                                            </div>
                                         </Link>
                                     </li>
                                 </motion.ul>
@@ -161,7 +176,14 @@ function NavBar() {
                                             </Dropdown.Header>
                                             <Dropdown.Item
                                                 as={Link}
-                                                to={"/"}
+                                                to={"/product"}
+                                                className="hover:bg-transparent focus:bg-transparent"
+                                            >
+                                                <span className="text-lg hover:underline">All products</span>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item
+                                                as={Link}
+                                                to={"/product/men's clothing"}
                                                 className="hover:bg-transparent focus:bg-transparent"
                                             >
                                                 <FaPerson className="w-5 h-5" />
@@ -169,7 +191,7 @@ function NavBar() {
                                             </Dropdown.Item>
                                             <Dropdown.Item
                                                 as={Link}
-                                                to={"/"}
+                                                to={"/product/women's clothing"}
                                                 className="hover:bg-transparent focus:bg-transparent"
                                             >
                                                 <FaPersonDress className="w-5 h-5" />
@@ -177,7 +199,7 @@ function NavBar() {
                                             </Dropdown.Item>
                                             <Dropdown.Item
                                                 as={Link}
-                                                to={"/about"}
+                                                to={"/product/jewelery"}
                                                 className="hover:bg-transparent focus:bg-transparent"
                                             >
                                                 <IoDiamond className="w-5 h-5" />
@@ -185,7 +207,7 @@ function NavBar() {
                                             </Dropdown.Item>
                                             <Dropdown.Item
                                                 as={Link}
-                                                to={"/about"}
+                                                to={"/product/electronics"}
                                                 className="hover:bg-transparent focus:bg-transparent"
                                             >
                                                 <FaComputer className="w-5 h-5" />
@@ -197,10 +219,14 @@ function NavBar() {
                             </li>
                             <li className="pl-[35px]">
                                 <Link
-                                    to="/contact"
-                                    className="text-black text-xl"
+                                    to="/cart"
+                                    className="text-black text-xl relative z-50 flex items-center"
                                 >
                                     Cart
+                                    <CiShoppingCart className="-z-40" />
+                                    <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
+                                        <span>2</span>
+                                    </div>
                                 </Link>
                             </li>
                         </ul>
