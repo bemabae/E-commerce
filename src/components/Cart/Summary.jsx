@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function Summary() {
     const cart = useProductStore((state) => state.cart);
-    console.log(cart);
 
     const findSum = (arr) => {
         let sum = 0;
@@ -17,7 +16,7 @@ function Summary() {
     return (
         <div className="mx-auto mt-6 max-w-4xl flex-[0.3] space-y-6 lg:mt-0 lg:w-full">
             <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
-                <p className="text-xl font-semibold text-gray-900 dark:text-white">Order summary</p>
+                <p className="text-xl font-semibold text-gray-900">Order summary</p>
                 <hr />
 
                 <div className="space-y-4">
@@ -26,6 +25,17 @@ function Summary() {
                             <dt className="text-base font-normal text-gray-500 ">Original price</dt>
                             <dd className="text-base font-medium text-gray-900 ">${findSum(cart).toFixed(2)}</dd>
                         </dl>
+
+                        <ul className="ml-9">
+                            {cart.map((item) => (
+                                <li
+                                    className="text-sm opacity-45 list-disc"
+                                    key={item.orderId}
+                                >
+                                    {item.title} ({item.size}) x {item.quantity}
+                                </li>
+                            ))}
+                        </ul>
 
                         <dl className="flex items-center justify-between gap-4">
                             <dt className="text-base font-normal text-gray-500 ">Savings</dt>
@@ -57,10 +67,10 @@ function Summary() {
                 </Link>
 
                 <div className="flex items-center justify-center gap-2">
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
+                    <span className="text-sm font-normal text-gray-500 "> or </span>
                     <Link
                         to="/product"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline "
                     >
                         Continue Shopping
                         <svg
