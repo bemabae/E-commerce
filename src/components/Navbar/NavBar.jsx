@@ -133,9 +133,11 @@ function NavBar() {
                                         >
                                             Cart
                                             <CiShoppingCart className="-z-40" />
-                                            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full right-5">
-                                                <span>2</span>
-                                            </div>
+                                            {cart.length > 0 && (
+                                                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full right-5">
+                                                    <span>{cart.length}</span>
+                                                </div>
+                                            )}
                                         </Link>
                                     </li>
                                 </motion.ul>
