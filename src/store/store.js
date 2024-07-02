@@ -8,10 +8,21 @@ export const useProductStore = create((set) => ({
     setAllProduct: (value) => set({ allProduct: value }),
 
     cart: [],
+
     addToCart: (product, size) =>
-        set((state) => ({
-            cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
-        })),
+        set((state) => {
+            const existingItem = state.cart.find((item) => item.id === product.id && item.size === size);
+
+            if (existingItem) {
+                alert("You already add this size to your cart");
+                return state;
+            }
+
+            return {
+                cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
+            };
+        }),
+
     increaseQuantity: (quantity, id) =>
         set((state) => ({
             cart: state.cart.map((item) => {
@@ -24,5 +35,6 @@ export const useProductStore = create((set) => ({
         set((state) => ({
             cart: state.cart.filter((item) => item.orderId !== id)
         })),
+
     clearCart: () => set({ cart: [] })
 }));
