@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextInput, Label, Checkbox } from "flowbite-react";
+import { TextInput, Label, Select } from "flowbite-react";
 import { FaSearch } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFilter } from "../../hooks/Filter.hook";
@@ -36,11 +36,10 @@ function Filter() {
                         <Label
                             htmlFor="sort"
                             value="Sort by"
-                            className="text-md"
+                            className="text-md inline-block mb-2"
                         />
-                        <select
+                        <Select
                             id="sort"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             {...fieldSort}
                         >
                             <option
@@ -53,77 +52,69 @@ function Filter() {
                             <option value="name">Name</option>
                             <option value="hToL">Price High to Low</option>
                             <option value="lToH">Price Low to High</option>
-                        </select>
+                        </Select>
                     </div>
                 </form>
             </div>
 
             <div className="md:hidden fixed">
                 <FaSearch
-                    className="h-7 w-7 cursor-pointer ml-4 absolute"
+                    className="h-7 w-7 cursor-pointer ml-4"
                     onClick={() => setSearchBar(!searchBar)}
                 />
-                {searchBar && (
-                    <div className=" mt-5">
-                        <form className="mt-4">
-                            <div>
-                                <Label
-                                    htmlFor="search"
-                                    value="Search By Name"
-                                    className="text-md"
-                                />
-                                <TextInput
-                                    id="search"
-                                    sizing="sm"
-                                    placeholder="Search here..."
-                                    className="mt-2"
-                                    {...fieldKeyword}
-                                />
-                            </div>
-                        </form>
-                    </div>
-                )}
+                <AnimatePresence>
+                    {searchBar && (
+                        <motion.div
+                            className=" mt-5 bg-gray-50 rounded-lg p-4 z-50"
+                            initial={{ x: -100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: -100, opacity: 0 }}
+                        >
+                            <form>
+                                <div>
+                                    <Label
+                                        htmlFor="search"
+                                        value="Search By Name"
+                                        className="text-md"
+                                    />
+                                    <TextInput
+                                        id="search"
+                                        sizing="sm"
+                                        placeholder="Search here..."
+                                        className="mt-2 bg"
+                                        {...fieldKeyword}
+                                    />
+                                </div>
+                                <div className="mt-3">
+                                    <Label
+                                        htmlFor="sort"
+                                        value="Sort by"
+                                        className="text-md inline-block mb-2"
+                                    />
+                                    <Select
+                                        id="sort"
+                                        sizing="sm"
+                                        {...fieldSort}
+                                    >
+                                        <option
+                                            value=""
+                                            defaultValue
+                                        >
+                                            Name, Id, Price
+                                        </option>
+                                        <option value="id">Id</option>
+                                        <option value="name">Name</option>
+                                        <option value="hToL">Price High to Low</option>
+                                        <option value="lToH">Price Low to High</option>
+                                    </Select>
+                                </div>
+                            </form>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </>
     );
 }
 
 export default Filter;
-
-{
-    /* <p className="text-md font-semibold mt-3">Category</p>
-                <div className="flex flex-col justify-center p-2">
-                    <div className="flex items-center">
-                        <Checkbox id="men" />
-                        <Label
-                            htmlFor="men"
-                            value="Men's clothing"
-                            className="ml-3"
-                        />
-                    </div>
-                    <div className="flex mt-2 items-center">
-                        <Checkbox id="women" />
-                        <Label
-                            htmlFor="women"
-                            value="Women's clothing"
-                            className="ml-3"
-                        />
-                    </div>
-                    <div className="flex mt-2 items-center">
-                        <Checkbox id="electrics" />
-                        <Label
-                            htmlFor="electrics"
-                            value="Electrics"
-                            className="ml-3"
-                        />
-                    </div>
-                    <div className="flex mt-2 items-center">
-                        <Checkbox id="jewelery" />
-                        <Label
-                            htmlFor="jewelery"
-                            value="Jewelery"
-                            className="ml-3"
-                        />
-                    </div>
-                </div> */
-}
