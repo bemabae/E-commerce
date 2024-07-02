@@ -20,7 +20,7 @@ function Cart() {
                 animate={{ width: "100%", opacity: 1 }}
                 transition={{ duration: 2 }}
             />
-            <section className="bg-white p-8 antialiased md:py-16 flex gap-[50px]">
+            <section className="bg-white p-8 antialiased md:py-16 flex gap-[50px] flex-col lg:flex-row">
                 <div className="flex-[0.7] border rounded-xl px-10 py-3">
                     <div>
                         <h1 className="text-4xl font-bold text-center">Shopping Cart</h1>
