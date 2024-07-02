@@ -22,7 +22,7 @@ function CartDetail({ item }) {
                     <Link
                         to={`/product/${item.id}/detail`}
                         href="#"
-                        className="shrink-0 md:order-1"
+                        className="shrink-0 md:order-1 flex justify-center lg:block"
                     >
                         <img
                             className="h-[200px] w-[200px] object-contain"
@@ -51,7 +51,7 @@ function CartDetail({ item }) {
                             </select>
                         </div>
                         <div className="text-end md:order-4 md:w-32">
-                            <p className="text-base font-bold text-gray-900 dark:text-white">
+                            <p className="text-xl font-bold text-gray-900">
                                 $ {(item.price * item.quantity).toFixed(2)}
                             </p>
                         </div>
@@ -60,7 +60,7 @@ function CartDetail({ item }) {
                     <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
                         <Link
                             to={`/product/${item.id}/detail`}
-                            className="text-base font-medium text-gray-900 hover:underline dark:text-white"
+                            className="text-base font-medium text-gray-900 hover:underline"
                         >
                             {item.title}
                         </Link>
