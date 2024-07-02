@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useProductStore } from "../../store/store";
 import CartDetail from "../../components/Cart/CartDetail";
 import Summary from "../../components/Cart/Summary";
+import { Link } from "react-router-dom";
 
 function Cart() {
     const cart = useProductStore((state) => state.cart);
@@ -28,7 +29,17 @@ function Cart() {
                     <br />
                     <hr />
 
-                    <div>
+                    <div className="h-[100%]">
+                        {cart.length == 0 && (
+                            <div className="flex justify-center h-[100%] items-center flex-col">
+                                <div className="mb-5">
+                                    <p className="text-lg">Your cart is empty..</p>
+                                </div>
+                                <Link className="text-xl hover:border-b-2 border-b-0 transition-all">
+                                    Click here to shopping
+                                </Link>
+                            </div>
+                        )}
                         {cart.map((item) => (
                             <CartDetail
                                 key={item.orderId}
