@@ -6,9 +6,12 @@ import { Squash as Hamburger } from "hamburger-react";
 import { FaPerson, FaPersonDress, FaComputer } from "react-icons/fa6";
 import { IoDiamond } from "react-icons/io5";
 import { CiShoppingCart } from "react-icons/ci";
+import { useProductStore } from "../../store/store";
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    const cart = useProductStore((state) => state.cart);
 
     // ถ้ากดเปิด menu สำหรับ mobile แล้ว Resize ขึ้นมา Desktop มันจะค้างไว้อันนี้วิธีแก้
     // useEffect(() => {
@@ -224,9 +227,11 @@ function NavBar() {
                                 >
                                     Cart
                                     <CiShoppingCart className="-z-40" />
-                                    <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
-                                        <span>2</span>
-                                    </div>
+                                    {cart.length > 0 && (
+                                        <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
+                                            <span>{cart.length}</span>
+                                        </div>
+                                    )}
                                 </Link>
                             </li>
                         </ul>
