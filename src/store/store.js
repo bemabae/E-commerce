@@ -10,6 +10,19 @@ export const useProductStore = create((set) => ({
     cart: [],
     addToCart: (product, size) =>
         set((state) => ({
-            cart: [...state.cart, { ...product, size, quantity: 1 }]
-        }))
+            cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
+        })),
+    increaseQuantity: (quantity, id) =>
+        set((state) => ({
+            cart: state.cart.map((item) => {
+                if (item.orderId == id) return { ...item, quantity };
+                return item;
+            })
+        })),
+
+    removeFromCart: (id) =>
+        set((state) => ({
+            cart: state.cart.filter((item) => item.orderId !== id)
+        })),
+    clearCart: () => set({ cart: [] })
 }));
