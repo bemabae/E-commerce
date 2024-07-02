@@ -6,7 +6,7 @@ import Product from "./pages/products";
 import CategoryProduct from "./components/Product/CategoryProduct/CategoryProduct";
 import Detail from "./pages/detail";
 import Cart from "./pages/cart";
-
+import Checkout from "./pages/checkout";
 function App() {
     const router = createBrowserRouter([
         {
@@ -32,6 +32,10 @@ function App() {
         {
             path: "/cart",
             element: <Cart />
+        },
+        {
+            path: "/checkout",
+            element: <Checkout />
         }
     ]);
     return <RouterProvider router={router} />;
