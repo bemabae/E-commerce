@@ -21,7 +21,6 @@ function CartDetail({ item }) {
                 <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <Link
                         to={`/product/${item.id}/detail`}
-                        href="#"
                         className="shrink-0 md:order-1 flex justify-center lg:block"
                     >
                         <img
