@@ -3,11 +3,15 @@ import { useProductStore } from "../../store/store";
 import { Link } from "react-router-dom";
 import { Modal } from "flowbite-react";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Summary({ title }) {
     const cart = useProductStore((state) => state.cart);
     const clearCart = useProductStore((state) => state.clearCart);
+
     const [checkout, setCheckout] = useState(false);
+
+    const navigate = useNavigate();
 
     const findSum = (arr) => {
         let sum = 0;
@@ -15,6 +19,12 @@ function Summary({ title }) {
             sum += item.price * item.quantity;
         }
         return sum;
+    };
+
+    const handleCheckout = () => {
+        setCheckout(true);
+        clearCart();
+        navigate("/");
     };
 
     return (
@@ -84,10 +94,7 @@ function Summary({ title }) {
                         <>
                             <button
                                 className="border bg-slate-300 flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
-                                onClick={() => {
-                                    setCheckout(true);
-                                    clearCart();
-                                }}
+                                onClick={handleCheckout}
                             >
                                 {title}
                             </button>
