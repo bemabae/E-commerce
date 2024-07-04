@@ -1,40 +1,97 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-export const useProductStore = create((set) => ({
-    fetchAllProduct: [],
-    allProduct: [],
+export const useProductStore = create(
+    persist(
+        (set) => ({
+            fetchAllProduct: [],
+            allProduct: [],
 
-    setFetchAllProduct: (value) => set({ fetchAllProduct: value }),
-    setAllProduct: (value) => set({ allProduct: value }),
+            setFetchAllProduct: (value) => set({ fetchAllProduct: value }),
+            setAllProduct: (value) => set({ allProduct: value }),
 
-    cart: [],
+            cart: [],
 
-    addToCart: (product, size) =>
-        set((state) => {
-            const existingItem = state.cart.find((item) => item.id === product.id && item.size === size);
+            addToCart: (product, size) =>
+                set((state) => {
+                    const existingItem = state.cart.find((item) => item.id === product.id && item.size === size);
 
-            if (existingItem) {
-                alert("You already add this size to your cart");
-                return state;
-            }
+                    if (existingItem) {
+                        alert("You already add this size to your cart");
+                        return state;
+                    }
 
-            return {
-                cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
-            };
+                    return {
+                        cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
+                    };
+                }),
+
+            increaseQuantity: (quantity, id) =>
+                set((state) => ({
+                    cart: state.cart.map((item) => {
+                        if (item.orderId === id) return { ...item, quantity };
+                        return item;
+                    })
+                })),
+
+            removeFromCart: (id) =>
+                set((state) => ({
+                    cart: state.cart.filter((item) => item.orderId !== id)
+                })),
+
+            clearCart: () => set({ cart: [] })
         }),
+        {
+            name: "product-store", // unique name for localStorage key
+            getStorage: () => localStorage // (optional) by default the 'localStorage' is used
+        }
+    )
+);
 
-    increaseQuantity: (quantity, id) =>
-        set((state) => ({
-            cart: state.cart.map((item) => {
-                if (item.orderId == id) return { ...item, quantity };
-                return item;
-            })
-        })),
+// persistent data but warning in console
+// export const useProductStore = create(
+//     persist(
+//         (set) => ({
+//             fetchAllProduct: [],
+//             allProduct: [],
 
-    removeFromCart: (id) =>
-        set((state) => ({
-            cart: state.cart.filter((item) => item.orderId !== id)
-        })),
+//             setFetchAllProduct: (value) => set({ fetchAllProduct: value }),
+//             setAllProduct: (value) => set({ allProduct: value }),
 
-    clearCart: () => set({ cart: [] })
-}));
+//             cart: [],
+
+//             addToCart: (product, size) =>
+//                 set((state) => {
+//                     const existingItem = state.cart.find((item) => item.id === product.id && item.size === size);
+
+//                     if (existingItem) {
+//                         alert("You already add this size to your cart");
+//                         return state;
+//                     }
+
+//                     return {
+//                         cart: [...state.cart, { ...product, size, quantity: 1, orderId: crypto.randomUUID() }]
+//                     };
+//                 }),
+
+//             increaseQuantity: (quantity, id) =>
+//                 set((state) => ({
+//                     cart: state.cart.map((item) => {
+//                         if (item.orderId === id) return { ...item, quantity };
+//                         return item;
+//                     })
+//                 })),
+
+//             removeFromCart: (id) =>
+//                 set((state) => ({
+//                     cart: state.cart.filter((item) => item.orderId !== id)
+//                 })),
+
+//             clearCart: () => set({ cart: [] })
+//         }),
+//         {
+//             name: 'product-store', // unique name for localStorage key
+//             getStorage: () => localStorage, // (optional) by default the 'localStorage' is used
+//         }
+//     )
+// );

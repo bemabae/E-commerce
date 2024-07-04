@@ -22,31 +22,27 @@ const useFilter = () => {
     }, []);
 
     useEffect(() => {
-        setAllProduct(fetchAllProduct);
-    }, [fetchAllProduct]);
-
-    useEffect(() => {
-        const product = filterByName(fetchAllProduct, keyword, sort);
+        const product = filteredAndSortedProducts(fetchAllProduct, keyword, sort);
         setAllProduct(product);
     }, [keyword, sort, fetchAllProduct]);
 
-    const filterByName = (products, keyword, sort) => {
-        const filtered = products.filter((item) => item.title.toLowerCase().includes(keyword?.toLowerCase()));
+    const filteredAndSortedProducts = (products, keyword, sort) => {
+        const filtered = products?.filter((item) => item?.title?.toLowerCase().includes(keyword?.toLowerCase()));
         return sortBy(filtered, sort);
     };
 
     const sortBy = (products, sort) => {
         switch (sort) {
             case "id":
-                return products.sort((a, b) => a.id - b.id);
+                return products?.sort((a, b) => a?.id - b?.id);
             case "name":
-                return products.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
+                return products?.sort((a, b) => (a?.title > b?.title ? 1 : a?.title < b?.title ? -1 : 0));
             case "hToL":
-                return products.sort((a, b) => b.price - a.price);
+                return products?.sort((a, b) => b?.price - a?.price);
             case "lToH":
-                return products.sort((a, b) => a.price - b.price);
+                return products?.sort((a, b) => a?.price - b?.price);
             default:
-                return products.sort((a, b) => a.id - b.id);
+                return products?.sort((a, b) => a?.id - b?.id);
         }
     };
 

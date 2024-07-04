@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useProductStore } from "../../store/store";
 import { Link } from "react-router-dom";
 import { quantity } from "../../utils/quantity";
 
 function CartDetail({ item }) {
+    const [quantityItem, setQuantityItem] = useState(1);
     const removeFromCart = useProductStore((state) => state.removeFromCart);
     const increaseQuantity = useProductStore((state) => state.increaseQuantity);
 
     const handleQuantity = (e) => {
-        increaseQuantity(e.target.value, item.orderId);
+        setQuantityItem(e.target.value);
     };
+
+    useEffect(() => {
+        increaseQuantity(quantityItem, item.orderId);
+    }, [quantityItem]);
 
     const handleRemove = () => {
         removeFromCart(item.orderId);

@@ -8,7 +8,7 @@ function AllProduct() {
 
     return (
         <div className="flex-1 py-10 flex flex-wrap gap-10 justify-center">
-            {allProduct.length == 0 && (
+            {allProduct?.length == 0 && (
                 <div className="flex justify-center h-[550px] items-center">
                     <ReactLoading
                         type="cubes"
@@ -17,7 +17,7 @@ function AllProduct() {
                     />
                 </div>
             )}
-            {allProduct.map((item) => (
+            {allProduct?.map((item) => (
                 <AllProductsCard
                     item={item}
                     key={item.id}
