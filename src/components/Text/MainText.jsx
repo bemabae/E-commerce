@@ -1,14 +1,13 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 function MainText() {
     return (
         <>
-            <div className="inline-block md:flex-1">
+            <div className="inline-block md:flex-1 md:p-2 p-4">
                 <header className="text-center mt-12">
                     <h1 className="text-5xl font-bold text-slate-600">Welcome to my shop!</h1>
                 </header>
-                <section className="mt-7 p-10">
+                <section className="mt-7 p-2 md:p-10">
                     <article>
                         <p className="text-center">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium perspiciatis vero a

@@ -57,7 +57,7 @@ function Filter() {
                 </form>
             </div>
 
-            <div className="md:hidden fixed">
+            <div className="md:hidden fixed z-50">
                 <FaSearch
                     className="h-7 w-7 cursor-pointer ml-4"
                     onClick={() => setSearchBar(!searchBar)}
@@ -65,7 +65,7 @@ function Filter() {
                 <AnimatePresence>
                     {searchBar && (
                         <motion.div
-                            className=" mt-5 bg-gray-50 rounded-lg p-4 z-50"
+                            className=" mt-5 bg-gray-50 rounded-lg p-4"
                             initial={{ x: -100, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: -100, opacity: 0 }}

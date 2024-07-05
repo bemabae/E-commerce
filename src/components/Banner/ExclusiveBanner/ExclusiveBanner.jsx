@@ -13,12 +13,12 @@ function ExclusiveBanner() {
             className="h-[500px] overflow-hidden"
             id="main"
         >
-            <div className="mt-[100px] text-center">
-                <h2 className="text-5xl font-semibold">Get Exclusive Offers On Your Email</h2>
+            <div className="mt-[50px] sm:mt-[100px] text-center px-4 md:px-0">
+                <h2 className="sm:text-5xl font-semibold text-4xl">Get Exclusive Offers On Your Email</h2>
             </div>
 
             <div className="mt-[30px] text-center">
-                <p className="text-xl">Subscribe to our newsletter and stay updated</p>
+                <p className="text-lg sm:text-xl">Subscribe to our newsletter and stay updated</p>
             </div>
 
             <div className="flex justify-center">
@@ -32,10 +32,10 @@ function ExclusiveBanner() {
                         type="email"
                         icon={HiMail}
                         placeholder="name@ourstore.com"
-                        className="inline-block w-[300px] md:w-[400px]"
+                        className="inline-block w-[250px] sm:w-[400px]"
                         required
                     />
-                    <button className="rounded-lg px-2 ml-1 bg-black text-white md:px-4">Subscribe</button>
+                    <button className="rounded-lg px-2 ml-2 sm:ml-1 bg-black text-white md:px-4">Subscribe</button>
                 </form>
             </div>
         </div>

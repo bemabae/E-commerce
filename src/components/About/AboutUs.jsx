@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function AboutUs() {
     return (
-        <div className="flex">
+        <div className="flex overflow-hidden">
             <motion.div
                 id="img"
                 className="md:w-[0] md:h-[0px] xl:w-[900px] xl:h-[650px] relative top-[80px] left-[100px] -z-10"
@@ -14,16 +14,16 @@ function AboutUs() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
             ></motion.div>
-            <div className="flex-1 flex flex-col justify-center">
+            <div className="flex-1 flex flex-col justify-center ">
                 <motion.span
-                    className="xl:relative text-7xl xl:top-[40px] font-extrabold text-center mt-10 lg:text-center xl:text-start"
+                    className="xl:relative text-7xl xl:top-[40px] font-extrabold text-center mt-10 lg:text-center xl:text-start "
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4, delay: 1.2 }}
                 >
                     About Us
                 </motion.span>
-                <div className="xl:relative xl:left-[150px] xl:top-[50px] xl:w-[700px] text-center mt-10 px-20 xl:px-0 lg:block">
+                <div className="xl:relative xl:left-[150px] xl:top-[50px] xl:w-[700px] text-center mt-10 px-10 sm:px-20 xl:px-0 lg:block overflow-hidden">
                     <motion.p
                         initial={{ y: -130, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -41,7 +41,7 @@ function AboutUs() {
                         facere! Adipisci laboriosam tempore vel cum sunt.
                     </motion.p>
                     <motion.div
-                        className="mt-[40px] flex justify-center items-center"
+                        className="mt-[40px] flex justify-center items-center mb-4"
                         initial={{ x: 150, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1, delay: 1.6 }}
