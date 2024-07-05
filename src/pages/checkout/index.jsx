@@ -13,9 +13,9 @@ function Checkout() {
                 animate={{ width: "100%", opacity: 1 }}
                 transition={{ duration: 2 }}
             />
-            <div>
+            <section>
                 <CheckoutForm />
-            </div>
+            </section>
         </>
     );
 }
