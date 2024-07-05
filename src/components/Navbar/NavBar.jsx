@@ -7,6 +7,7 @@ import { FaPerson, FaPersonDress, FaComputer } from "react-icons/fa6";
 import { IoDiamond } from "react-icons/io5";
 import { CiShoppingCart } from "react-icons/ci";
 import { useProductStore } from "../../store/store";
+import logo from "../../img/logoCC.png";
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +29,14 @@ function NavBar() {
     return (
         <>
             <nav className="h-[80px] bg-white sticky top-0 z-50">
-                <div className="flex justify-between items-center px-[100px] h-[100%] py-0">
+                <div className="flex justify-between items-center px-[50px] md:px-[100px]  h-[100%] py-0">
                     <div className="cursor-pointer">
                         <Link to="/">
-                            <span className="text-2xl">LOGO</span>
+                            <img
+                                src={logo}
+                                alt=""
+                                width={85}
+                            />
                         </Link>
                     </div>
 
