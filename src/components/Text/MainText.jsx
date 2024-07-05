@@ -5,7 +5,7 @@ function MainText() {
         <>
             <div className="inline-block md:flex-1 md:p-2 p-4">
                 <header className="text-center mt-12">
-                    <h1 className="text-5xl font-bold text-slate-600">Welcome to my shop!</h1>
+                    <h1 className="text-5xl font-bold text-slate-600">Welcome to Core-Commerce</h1>
                 </header>
                 <section className="mt-7 p-2 md:p-10">
                     <article>
