@@ -19,7 +19,7 @@ function CategoryProductCard({ item }) {
                 <img
                     className="p-8 rounded-t-lg object-contain"
                     src={item?.image}
-                    alt={item?.name}
+                    alt={item?.title}
                     width={300}
                     height={300}
                 />

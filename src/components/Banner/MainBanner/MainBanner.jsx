@@ -2,15 +2,11 @@ import React from "react";
 import { Carousel } from "flowbite-react";
 import { Link } from "react-router-dom";
 
-// Link to Category here also
 function MainBanner() {
     return (
         <div className="h-[300px] sm:h-[450px] w-[100%] md:w-[100%] md:h-[500px] 2xl:h-[600px] lg:w-[55%] ">
             <Carousel slideInterval={4000}>
-                <Link
-                    to="/product/men's clothing"
-                    className=""
-                >
+                <Link to="/product/men's clothing">
                     <img
                         src="https://images.unsplash.com/photo-1602810320073-1230c46d89d4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="men's clothing"
@@ -26,7 +22,6 @@ function MainBanner() {
                     <img
                         src="https://images.unsplash.com/photo-1601821765780-754fa98637c1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="jewelery"
-                        className=""
                     />
                 </Link>
                 <Link to="/product/electronics">
