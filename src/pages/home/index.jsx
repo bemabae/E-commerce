@@ -20,7 +20,7 @@ function Homepage() {
                     transition={{ duration: 2 }}
                 />
                 <PromoBanner />
-                <motion.div
+                <motion.main
                     className="flex flex-col lg:flex-row"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -28,24 +28,23 @@ function Homepage() {
                 >
                     <MainBanner />
                     <MainText />
-                </motion.div>
-                <motion.div
+                </motion.main>
+                <motion.section
                     className="mt-[80px]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2, duration: 1 }}
                 >
                     <NewProduct />
-                </motion.div>
-
-                <motion.div
+                </motion.section>
+                <motion.section
                     className="mt-[60px]"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1.5 }}
                 >
                     <ExclusiveBanner />
-                </motion.div>
+                </motion.section>
 
                 <Footer />
             </div>

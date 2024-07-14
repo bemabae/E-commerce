@@ -11,7 +11,7 @@ function Filter() {
 
     return (
         <>
-            <div className="md:block lg:w-[20%] px-10 py-5 h-[15%] border rounded-r-lg hidden sticky top-0">
+            <aside className="md:block lg:w-[20%] px-10 py-5 h-[15%] border rounded-r-lg hidden sticky top-0">
                 <div className="text-center">
                     <h2 className="font-semibold text-xl">Filter Products</h2>
                     <br />
@@ -55,9 +55,9 @@ function Filter() {
                         </Select>
                     </div>
                 </form>
-            </div>
+            </aside>
 
-            <div className="md:hidden fixed z-50">
+            <aside className="md:hidden fixed z-50">
                 <FaSearch
                     className="h-7 w-7 cursor-pointer ml-4"
                     onClick={() => setSearchBar(!searchBar)}
@@ -112,7 +112,7 @@ function Filter() {
                         </motion.div>
                     )}
                 </AnimatePresence>
-            </div>
+            </aside>
         </>
     );
 }

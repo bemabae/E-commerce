@@ -13,13 +13,13 @@ function ExclusiveBanner() {
             className="h-[500px] overflow-hidden"
             id="main"
         >
-            <div className="mt-[50px] sm:mt-[100px] text-center px-4 md:px-0">
+            <header className="mt-[50px] sm:mt-[100px] text-center px-4 md:px-0">
                 <h2 className="sm:text-5xl font-semibold text-4xl">Get Exclusive Offers On Your Email</h2>
-            </div>
+            </header>
 
-            <div className="mt-[30px] text-center">
+            <article className="mt-[30px] text-center">
                 <p className="text-lg sm:text-xl">Subscribe to our newsletter and stay updated</p>
-            </div>
+            </article>
 
             <div className="flex justify-center">
                 <form

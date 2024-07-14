@@ -34,7 +34,9 @@ function NewProduct() {
 
     return (
         <div>
-            <h1 className="text-5xl font-bold text-center">New Product</h1>
+            <header>
+                <h1 className="text-5xl font-bold text-center">New Product</h1>
+            </header>
 
             {loading && (
                 <div className="flex justify-center h-[550px] items-center">
