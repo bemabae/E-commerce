@@ -23,8 +23,12 @@ function Summary({ title }) {
 
     const handleCheckout = () => {
         setCheckout(true);
-        clearCart();
+    };
+
+    const handleCloseModal = () => {
+        setCheckout(false);
         navigate("/");
+        clearCart();
     };
 
     return (
@@ -100,7 +104,7 @@ function Summary({ title }) {
                             </button>
                             <Modal
                                 show={checkout}
-                                onClose={() => setCheckout(false)}
+                                onClose={handleCloseModal}
                             >
                                 <Modal.Header>
                                     {" "}
