@@ -53,7 +53,7 @@ function NavBar() {
                     <AnimatePresence>
                         {isOpen && (
                             <motion.div
-                                className="fixed shadow-xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-50 border-b border-b-white/20 z-50 mt-3"
+                                className="fixed shadow-xl right-0 top-[3.5rem] p-5 pt-0 bg-gray-50 border-b border-b-white/20 z-50 mt-3 md:hidden"
                                 initial={{ height: 0 }}
                                 animate={{ height: 150 }}
                                 transition={{ duration: 0.2 }}
